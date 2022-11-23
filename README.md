@@ -3,6 +3,8 @@
 If you are facing the problem where the Wifi login page is not coming after connecting to the Public Wifi's such as JioNet@CollegeName, Download the wifiGOD.bat file from this repo, and run it inside your PC.
 Try going to the login page again after running the script, the error would have been resolved.
 
+Please note that this will only work on Windows Operating System.
+
 If you are unable to download the script, follow the below steps.
 
 - Open Notepad
