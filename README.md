@@ -16,7 +16,7 @@ ipconfig /renew
 echo You May Now Enjoy Your Wifi Network :XD Developed by Ansh Goyal
 exit /b
 ```
-- Save the file as wifiGOD.bat, make sure to select "All Files" while saving.
+- Save the file as wifiGOD.bat, make sure to select "All Files" in 'Save as Type' while saving.
 - Run the wifiGOD file.
 - You can use the same bat file everytime you face the problem.
 
