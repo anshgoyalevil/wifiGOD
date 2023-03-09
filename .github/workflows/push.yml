@@ -21,13 +21,12 @@ jobs:
       run: |
         # Add deployment commands here that use the SECRET_KEY variable
 
+    - name: Print SECRET_KEY value
+      run: |
+        echo "SECRET_KEY value is: $SECRET_KEY"
     - name: Test if SECRET_KEY is populated
       run: |
         if [ -z "$SECRET_KEY" ]; then
           echo "SECRET_KEY is not populated!"
           exit 1
         fi
-    - name: Print SECRET_KEY value
-      run: |
-        echo "SECRET_KEY value is: $SECRET_KEY"
-
