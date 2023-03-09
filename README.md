@@ -1,4 +1,4 @@
-# wifiGOD
+# wifiGOD (Wifi Resolver)
 
 This repo contains some bash automations to improve your wifi usage experience.
 
