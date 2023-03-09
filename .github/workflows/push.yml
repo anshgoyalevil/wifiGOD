@@ -19,7 +19,7 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
-        # Add deployment commands here that use the SECRET_KEY variable
+        echo "SECRET_KEY value is: $SECRET_KEY"
 
     - name: Print SECRET_KEY value
       run: |
