@@ -1,0 +1,29 @@
+name: Push Workflow
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build project
+      run: |
+        # Add build commands here
+
+    - name: Deploy changes
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      run: |
+        # Add deployment commands here that use the SECRET_KEY variable
+
+    - name: Test if SECRET_KEY is populated
+      run: |
+        if [ -z "$SECRET_KEY" ]; then
+          echo "SECRET_KEY is not populated!"
+          exit 1
+        fi
