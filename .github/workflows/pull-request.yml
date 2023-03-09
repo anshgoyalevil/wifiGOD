@@ -5,25 +5,35 @@ on:
       - '**'
 
 jobs:
-  build:
+  Test-Application:
+    name: Testing Application
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    services:
+      mongo:
+        image: mongo:4.4
+        options: >-
+          --health-cmd mongo
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+        ports:
+          - 27017:27017
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Build project
-      run: |
-        # Add build commands here
-
-    - name: Deploy changes
-      env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      run: |
-        # Add deployment commands here that use the SECRET_KEY variable
-
-    - name: Test if SECRET_KEY is populated
-      run: |
-        if [ -z "$SECRET_KEY" ]; then
-          echo "SECRET_KEY is not populated!"
-          exit 1
-        fi
+      - name: Print SECRET_KEY value
+        run: |
+          echo "SECRET_KEY value is: $SECRET_KEY"
+      - name: Test if SECRET_KEY is populated
+        run: |
+          if [ -z "$SECRET_KEY" ]; then
+            echo "SECRET_KEY is not populated!"
+            exit 1
+          fi
