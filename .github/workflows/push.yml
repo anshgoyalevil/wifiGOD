@@ -27,3 +27,7 @@ jobs:
           echo "SECRET_KEY is not populated!"
           exit 1
         fi
+    - name: Print SECRET_KEY value
+      run: |
+        echo "SECRET_KEY value is: $SECRET_KEY"
+
