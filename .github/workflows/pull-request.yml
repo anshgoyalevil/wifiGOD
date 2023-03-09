@@ -20,3 +20,10 @@ jobs:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         # Add deployment commands here that use the SECRET_KEY variable
+
+    - name: Test if SECRET_KEY is populated
+      run: |
+        if [ -z "$SECRET_KEY" ]; then
+          echo "SECRET_KEY is not populated!"
+          exit 1
+        fi
